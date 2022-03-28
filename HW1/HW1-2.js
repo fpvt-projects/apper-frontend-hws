@@ -1,15 +1,19 @@
+class newNode 
+{
+  constructor (data, next) 
+  {
+    this.data = data
+    this.next = null
+  }
 
-
-//SAMPLE
-// Name : Atharva Deshpande
-// Roll No : 2011040
-// Program 4 : Implement STACK Linked List
+}
 
 class Stack
 {
   constructor () 
   {
     this.top = null
+    this.length = 0
   }
 
   push = (ele) => {
@@ -17,6 +21,7 @@ class Stack
 	  console.log(node)
 	  node.next=this.top
 	  this.top=node
+    this.length++
   }
 
   pop()
@@ -24,6 +29,7 @@ class Stack
 	  var temp=this.top
 	  this.top=this.top.next
 	  temp=null
+    this.length--
   }
 
   display()
@@ -36,30 +42,17 @@ class Stack
         temp=temp.next
       }
   }
-  
-}
-  
-class newNode 
-{
-  constructor (data, next) 
-  {
-    this.data = data
-    this.next = null
-  }
 
+  peek(){
+    console.log(this.length)
+  }
+  
 }
+  
 const top = new Stack()
-top.push(11)
-top.push(22)
-top.push(33)
-top.push(44)
-top.push(55)
-top.push(66)
-console.log("After PUSH...")
+top.push('Milk')
+top.push('Eggs')
 top.display()
+top.peek()
 top.pop()
-console.log("After POP...")
-top.display()
-top.pop()
-console.log("After POP...")
 top.display()

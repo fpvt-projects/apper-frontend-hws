@@ -1,3 +1,4 @@
+//PALINDROME FUNCTION
 isPalindrome = (words) => {
     palindrome = words.toLowerCase().split("").reverse().join("")
      if(words.toLowerCase() === palindrome){

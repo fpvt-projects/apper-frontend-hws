@@ -1,5 +1,4 @@
-word = 'joseph'
-
+//REVERSE FUNCTION
 reverse = (words) => {
   reverseArray = []
   for(i = 0; i < words.length; i++){
@@ -9,5 +8,5 @@ reverse = (words) => {
   return joinWord.join('')
 }
 
-const reversedWord = reverse(word)
+const reversedWord = reverse("joseph")
 console.log(reversedWord)
