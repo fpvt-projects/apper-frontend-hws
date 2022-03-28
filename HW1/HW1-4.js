@@ -1,18 +1,6 @@
-// wordsArray = ['racecar', 'deified', 'radar', 'uwu', 'Macbook', 'Windows']
-
 isPalindrome = (words) => {
-  // words.forEach(given => {
-  //   for(i = 0; i < given.length; i++){
-  //     palindrome = given.split("").reverse().join("")
-  //   }
-  //   if(given === palindrome){
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // });
-    palindrome = words.split("").reverse().join("")
-     if(words === palindrome){
+    palindrome = words.toLowerCase().split("").reverse().join("")
+     if(words.toLowerCase() === palindrome){
       return true
     } else {
       return false
@@ -22,7 +10,7 @@ isPalindrome = (words) => {
 palindromeResult = isPalindrome("racecar")
 console.log(palindromeResult)
 
-palindromeResult = isPalindrome("radar")
+palindromeResult = isPalindrome("Radar")
 console.log(palindromeResult)
 
 palindromeResult = isPalindrome("Windows")

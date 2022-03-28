@@ -1,8 +1,8 @@
-const word = "helloworld"
+const word = "hello world"
 vowel = ['a','e','i', 'o', 'u']
 ret = []
 convertToVowels = (words) => {
-    givenWord = word.split("")
+    givenWord = word.toLowerCase().split("")
     for(var i = 0; i < givenWord.length; i += 1) {
         if(vowel.indexOf(givenWord[i]) > -1){
             ret.push(givenWord[i]);

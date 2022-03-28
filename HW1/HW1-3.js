@@ -1,4 +1,4 @@
-word = 'hello'
+word = 'joseph'
 
 reverse = (words) => {
   reverseArray = []
