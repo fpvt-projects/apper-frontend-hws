@@ -13,46 +13,59 @@ class Stack
   constructor () 
   {
     this.top = null
-    this.length = 0
   }
 
   push = (ele) => {
-	  var node=new newNode(ele)
-	  console.log(node)
-	  node.next=this.top
-	  this.top=node
-    this.length++
+    if(typeof ele === 'string'){
+      var node=new newNode(ele)
+      node.next=this.top
+      this.top=node
+      return "Pushed"
+    } else {
+      return "Not a String"
+    }
+      
   }
 
-  pop()
-  {
-	  var temp=this.top
-	  this.top=this.top.next
-	  temp=null
-    this.length--
-  }
-
-  display()
-  {
-    
+  pop = () => {
       var temp=this.top
-      while(temp!=null)
-      {
-        console.log(temp.data)
-        temp=temp.next
+      if(temp === null) {
+        return "Empty Stack"
+      } else {
+        this.top=this.top.next
+        temp=null
+        return "Popped"
       }
   }
 
+  check = () => {
+      var checkArr = []
+      var temp=this.top
+      while(temp!=null)
+      {
+        checkArr.push(temp.data)
+        temp=temp.next
+      }
+        return checkArr
+  }
+
   peek(){
-    console.log(this.length)
+    var temp=this.top
+    return (temp.data)
   }
   
 }
   
 const top = new Stack()
-top.push('Milk')
-top.push('Eggs')
-top.display()
-top.peek()
-top.pop()
-top.display()
+console.log(top.push('Milk'))
+console.log(top.push('Eggs'))
+console.log(top.push(1))
+console.log(top.check())
+console.log(top.peek())
+console.log(top.pop())
+console.log(top.check())
+console.log(top.pop())
+console.log(top.check())
+console.log(top.pop())
+
+
