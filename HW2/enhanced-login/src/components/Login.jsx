@@ -9,6 +9,7 @@ const Login = (props) => {
     const [password, setPassword] = useState("")
     const [loginState, setLoginState] = useState(true)
 
+    //LIST-OF-VALID-CREDENTIALS
     const database = [
         {
             username: "admin",
@@ -16,6 +17,7 @@ const Login = (props) => {
         }
     ]
 
+    //USER-INPUT
     const userData = {
         "username": username,
         "password": password
@@ -51,7 +53,7 @@ const Login = (props) => {
             </form>
     ) : (
         <form className="loginForm">
-            <h1>Welcome! {userData.username}</h1>
+            <h1>hello, {userData.username}!</h1>
             <Button onClick={logoutHandle}>Logout</Button>
         </form>
     )}
