@@ -1,7 +1,7 @@
 import Button from "./Button";
 import Input from "./Input";
 import "../App.scss";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 
 const Checklist = () => {
@@ -10,26 +10,27 @@ const Checklist = () => {
     const [dataInput, setdataInput] = useState('');
 
     const addTODO = (e) => {
-        // const textinputref = useRef();
-
         e.preventDefault()
-        setChecklist(() => [...Checklist, {Key: 2, value: dataInput}]);
-        resetFields()
+        setChecklist(() => [...Checklist, {Key: Checklist.length+1, value: dataInput}]);
         console.log(Checklist)
+        resetFields()
     }
 
     const resetFields = () => {
         setdataInput("")
     }
 
-    const removeTODO = (e) => {
-        document.getElementById(id).remove();
+    const removeTODO = (str) => {
+        setChecklist(Checklist.filter((items) => items.Key !== str))
+        console.log(str)
     }
 
     const clearTODO = (e) => {
+        e.preventDefault()
         setChecklist([]);
         console.log("Cleared!")
     }
+   
 
     return (
         <div className="checklistWrapper">
@@ -39,13 +40,10 @@ const Checklist = () => {
                 <Button className="UButton clear"onClick={clearTODO}>Clear Checklist</Button>
             </form>
             <ul className="UList">
-                {Checklist.map((items, i) => <li className="item" onClick={removeTODO}>{i+1}. {items.value}</li>)}
+                {Checklist.map((items) => <li className="item" onClick={()=>removeTODO(items.Key)} id={items.Key}>{items.value}</li>)}
             </ul>
         </div>
     );
 }
 
 export default Checklist;
-
-
-// ref={textinputref}
